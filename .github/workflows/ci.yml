@@ -1,0 +1,12 @@
+jobs:
+  ci:
+    name: Build docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+      uses: actions/checkout@v2
+      - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
+      with:
+        image: davesnx/alpine-esy:latest
+        run: echo "OK"

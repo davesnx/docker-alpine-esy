@@ -11,7 +11,7 @@ RUN mkdir /esy
 WORKDIR /esy
 
 ENV NPM_CONFIG_PREFIX=/esy
-RUN npm install -g --unsafe-perm esy@0.6.10
+RUN npm install -g --unsafe-perm esy@0.6.12
 
 # Alpine image where
 FROM alpine:3.8 as esy
