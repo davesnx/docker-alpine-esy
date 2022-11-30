@@ -36,12 +36,14 @@ jobs:
       - id: commit
         uses: pr-mpt/actions-commit-hash@v2
 
-      - name: Build images
+      - name: Build images and push
         uses: docker/build-push-action@v3
         with:
           context: .
           file: ./Dockerfile
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           load: false
           tags: davesnx/docker-alpine-esy:ci_${{ steps.commit.outputs.short }}
 
